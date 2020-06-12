@@ -1,0 +1,121 @@
+==2257== Memcheck, a memory error detector
+==2257== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==2257== Using Valgrind-3.13.0 and LibVEX; rerun with -h for copyright info
+==2257== Command: ./malloc0
+==2257== Parent PID: 1474
+==2257== 
+--2257-- 
+--2257-- Valgrind options:
+--2257--    -v
+--2257--    --tool=memcheck
+--2257--    --leak-check=full
+--2257--    --log-file=malloc0.txt
+--2257-- Contents of /proc/version:
+--2257--   Linux version 4.15.0-106-generic (buildd@lcy01-amd64-016) (gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)) #107-Ubuntu SMP Thu Jun 4 11:27:52 UTC 2020
+--2257-- 
+--2257-- Arch and hwcaps: AMD64, LittleEndian, amd64-cx16-lzcnt-rdtscp-sse3-avx-avx2
+--2257-- Page sizes: currently 4096, max supported 4096
+--2257-- Valgrind library directory: /usr/lib/valgrind
+--2257-- Reading syms from /home/tesla/compute/test/malloc0
+--2257-- Reading syms from /lib/x86_64-linux-gnu/ld-2.27.so
+--2257--   Considering /lib/x86_64-linux-gnu/ld-2.27.so ..
+--2257--   .. CRC mismatch (computed 1b7c895e wanted 2943108a)
+--2257--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/ld-2.27.so ..
+--2257--   .. CRC is valid
+--2257-- Reading syms from /usr/lib/valgrind/memcheck-amd64-linux
+--2257--   Considering /usr/lib/valgrind/memcheck-amd64-linux ..
+--2257--   .. CRC mismatch (computed 41ddb025 wanted 9972f546)
+--2257--    object doesn't have a symbol table
+--2257--    object doesn't have a dynamic symbol table
+--2257-- Scheduler: using generic scheduler lock implementation.
+--2257-- Reading suppressions file: /usr/lib/valgrind/default.supp
+==2257== embedded gdbserver: reading from /tmp/vgdb-pipe-from-vgdb-to-2257-by-tesla-on-???
+==2257== embedded gdbserver: writing to   /tmp/vgdb-pipe-to-vgdb-from-2257-by-tesla-on-???
+==2257== embedded gdbserver: shared mem   /tmp/vgdb-pipe-shared-mem-vgdb-2257-by-tesla-on-???
+==2257== 
+==2257== TO CONTROL THIS PROCESS USING vgdb (which you probably
+==2257== don't want to do, unless you know exactly what you're doing,
+==2257== or are doing some strange experiment):
+==2257==   /usr/lib/valgrind/../../bin/vgdb --pid=2257 ...command...
+==2257== 
+==2257== TO DEBUG THIS PROCESS USING GDB: start GDB like this
+==2257==   /path/to/gdb ./malloc0
+==2257== and then give GDB the following command
+==2257==   target remote | /usr/lib/valgrind/../../bin/vgdb --pid=2257
+==2257== --pid is optional if only one valgrind process is running
+==2257== 
+--2257-- REDIR: 0x401f2f0 (ld-linux-x86-64.so.2:strlen) redirected to 0x580608c1 (???)
+--2257-- REDIR: 0x401f0d0 (ld-linux-x86-64.so.2:index) redirected to 0x580608db (???)
+--2257-- Reading syms from /usr/lib/valgrind/vgpreload_core-amd64-linux.so
+--2257--   Considering /usr/lib/valgrind/vgpreload_core-amd64-linux.so ..
+--2257--   .. CRC mismatch (computed 50df1b30 wanted 4800a4cf)
+--2257--    object doesn't have a symbol table
+--2257-- Reading syms from /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so
+--2257--   Considering /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so ..
+--2257--   .. CRC mismatch (computed f893b962 wanted 95ee359e)
+--2257--    object doesn't have a symbol table
+==2257== WARNING: new redirection conflicts with existing -- ignoring it
+--2257--     old: 0x0401f2f0 (strlen              ) R-> (0000.0) 0x580608c1 ???
+--2257--     new: 0x0401f2f0 (strlen              ) R-> (2007.0) 0x04c32db0 strlen
+--2257-- REDIR: 0x401d360 (ld-linux-x86-64.so.2:strcmp) redirected to 0x4c33ee0 (strcmp)
+--2257-- REDIR: 0x401f830 (ld-linux-x86-64.so.2:mempcpy) redirected to 0x4c374f0 (mempcpy)
+--2257-- Reading syms from /lib/x86_64-linux-gnu/libc-2.27.so
+--2257--   Considering /lib/x86_64-linux-gnu/libc-2.27.so ..
+--2257--   .. CRC mismatch (computed b1c74187 wanted 042cc048)
+--2257--   Considering /usr/lib/debug/lib/x86_64-linux-gnu/libc-2.27.so ..
+--2257--   .. CRC is valid
+--2257-- REDIR: 0x4edac70 (libc.so.6:memmove) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9d40 (libc.so.6:strncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edaf50 (libc.so.6:strcasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9790 (libc.so.6:strcat) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9d70 (libc.so.6:rindex) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edc7c0 (libc.so.6:rawmemchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edade0 (libc.so.6:mempcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edac10 (libc.so.6:bcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9d00 (libc.so.6:strncmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9800 (libc.so.6:strcmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edad40 (libc.so.6:memset) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ef80f0 (libc.so.6:wcschr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9ca0 (libc.so.6:strnlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9870 (libc.so.6:strcspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edafa0 (libc.so.6:strncasecmp) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9840 (libc.so.6:strcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edb0e0 (libc.so.6:memcpy@@GLIBC_2.14) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9da0 (libc.so.6:strpbrk) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed97c0 (libc.so.6:index) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ed9c70 (libc.so.6:strlen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ee46c0 (libc.so.6:memrchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edaff0 (libc.so.6:strcasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edabe0 (libc.so.6:memchr) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4ef8eb0 (libc.so.6:wcslen) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4eda050 (libc.so.6:strspn) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edaf20 (libc.so.6:stpncpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edaef0 (libc.so.6:stpcpy) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edc7f0 (libc.so.6:strchrnul) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4edb040 (libc.so.6:strncasecmp_l) redirected to 0x4a2a6e0 (_vgnU_ifunc_wrapper)
+--2257-- REDIR: 0x4fca3c0 (libc.so.6:__strrchr_avx2) redirected to 0x4c32730 (rindex)
+--2257-- REDIR: 0x4ed3070 (libc.so.6:malloc) redirected to 0x4c2faa0 (malloc)
+--2257-- REDIR: 0x4fca1d0 (libc.so.6:__strchrnul_avx2) redirected to 0x4c37020 (strchrnul)
+--2257-- REDIR: 0x4fcaab0 (libc.so.6:__mempcpy_avx_unaligned_erms) redirected to 0x4c37130 (mempcpy)
+--2257-- REDIR: 0x4ed3950 (libc.so.6:free) redirected to 0x4c30cd0 (free)
+==2257== 
+==2257== HEAP SUMMARY:
+==2257==     in use at exit: 0 bytes in 1 blocks
+==2257==   total heap usage: 3 allocs, 2 frees, 1,024 bytes allocated
+==2257== 
+==2257== Searching for pointers to 1 not-freed blocks
+==2257== Checked 68,728 bytes
+==2257== 
+==2257== 0 bytes in 1 blocks are definitely lost in loss record 1 of 1
+==2257==    at 0x4C2FB0F: malloc (in /usr/lib/valgrind/vgpreload_memcheck-amd64-linux.so)
+==2257==    by 0x108711: main (in /home/tesla/compute/test/malloc0)
+==2257== 
+==2257== LEAK SUMMARY:
+==2257==    definitely lost: 0 bytes in 1 blocks
+==2257==    indirectly lost: 0 bytes in 0 blocks
+==2257==      possibly lost: 0 bytes in 0 blocks
+==2257==    still reachable: 0 bytes in 0 blocks
+==2257==         suppressed: 0 bytes in 0 blocks
+==2257== 
+==2257== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)
+==2257== ERROR SUMMARY: 1 errors from 1 contexts (suppressed: 0 from 0)

@@ -3,7 +3,7 @@ CC = gcc
 LIBS = -pthread -lm -lrt
 CFLAGS  = -Wall
 # DEPS = queue_ops.h
-TARGET = base
+TARGET = malloc0
 
 all: $(TARGET)
 

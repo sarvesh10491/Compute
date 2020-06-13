@@ -3,7 +3,7 @@ CC = gcc
 LIBS = -pthread -lm -lrt
 CFLAGS  = -Wall
 # DEPS = queue_ops.h
-TARGET = malloc0
+TARGET = struct_packing
 
 all: $(TARGET)
 

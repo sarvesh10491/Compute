@@ -3,7 +3,7 @@ CC = gcc
 LIBS = -pthread -lm -lrt
 CFLAGS  = -Wall
 # DEPS = queue_ops.h
-TARGET = timerdet
+TARGET = syncthread
 
 all: $(TARGET)
 
